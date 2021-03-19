@@ -160,7 +160,15 @@
       	</div>
       	</div>
     </section>
-<div class="writer"><a href="write"><input type="button" value="글쓰기"></a></div>
+    <div class="writer">
+    <c:if test="${empty sessionScope.id}">
+<a href="login" onclick="alert('로그인 후에 이용해주세요.')" class="write_a"><span>글쓰기</span></a>
+</c:if>
+<c:if test="${not empty sessionScope.id}">
+<a href="write" class="write_a"><span>글쓰기</span></a>
+</c:if>
+</div>
+<!-- <div class="writer"><a href="write"><input type="button" value="글쓰기"></a></div> -->
 <footer>
          <div class="inner">
             <div class="footdiv">

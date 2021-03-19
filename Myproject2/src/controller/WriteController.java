@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+
 
 //import com.mysql.cj.Session;
 
@@ -21,9 +24,15 @@ public class WriteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset=UTF-8"); //한글써도 안깨지게
 		
 		
-		
+//		HttpSession session = req.getSession(true);
+//		if(session.getAttribute("id").equals("")||session.getAttribute("id")==null) {
+//			out.println("<script>alert('로그인을 해주세요'); location.href='login';</script>");
+//		}
+      
 		
 		req.getRequestDispatcher("/WEB-INF/view/write.jsp").forward(req, resp);
 	}

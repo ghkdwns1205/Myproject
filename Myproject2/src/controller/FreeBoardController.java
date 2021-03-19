@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -31,6 +32,7 @@ public class FreeBoardController extends HttpServlet {
 		
 		req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8"); //한글써도 안깨지게
+        
         String page1 = req.getParameter("p");
         String choice1 = req.getParameter("choice");
         String search1 = req.getParameter("search");
